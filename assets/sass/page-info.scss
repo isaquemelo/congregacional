@@ -1,0 +1,62 @@
+.informativo, .informativo_type{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+	.flexFlowColunm{
+		display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	flex-flow: column;
+	}
+	.owl-item ul{
+		padding: 0px!important;
+	}
+    .masterInfoTitle {
+	    font-family: $familia-padrao;
+	    text-transform: uppercase;
+	    color: white;
+	    font-size: 1.2em;
+	    font-weight: 800;
+	    display: flex;
+	    flex-flow: column;
+	    justify-content: center;
+	    align-items: center;
+	}
+	.masterInfoTitle:after {
+	    content: " ";
+	    width: 55px;
+	    background: white;
+	    height: 3px;
+	    display: block;
+	    margin-top: 5px;
+	}
+	.infoTitle {
+	    font-family: $familia-padrao;
+	    font-size: 3em;
+	    color: white;
+	    text-align: center;
+	    padding: 0px 0px;
+	    font-weight: bold;
+	    line-height: 47px;
+	    margin-top: 25px;
+	    letter-spacing: 0.9px;
+	}
+
+	.theInfoContent {
+	    color: white;
+	    text-align: center;
+	    margin-top: 15px;
+	    font-family: $familia-padrao;
+	    line-height: 34px;
+	    font-size: 1.16em;
+	    padding: 0px 40px;
+	    cursor: move;
+	}
+
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    width: 6px;
+    height: 6px;
+}

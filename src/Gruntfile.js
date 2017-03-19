@@ -36,6 +36,7 @@ module.exports = function( grunt ) {
 			dist: {
 				files: {
 					'<%= dirs.js %>/main.min.js': [
+						'<%= dirs.js %>/src/*.js', // External libs/plugins
 						'<%= dirs.js %>/libs/*.js', // External libs/plugins
 						'<%= dirs.js %>/main.js'    // Custom JavaScript
 					]
@@ -65,16 +66,11 @@ module.exports = function( grunt ) {
 		sass: {
 			dist: {
 				options: {
-					style: 'compressed',
-					sourcemap: 'none'
+					style: 'compressed'
 				},
-				files: [{
-					expand: true,
-					cwd: '<%= dirs.sass %>',
-					src: ['*.scss'],
-					dest: '<%= dirs.css %>',
-					ext: '.css'
-				}]
+				files: {
+					'<%= dirs.css %>/style.css': '<%= dirs.sass %>/style.scss'
+				}
 			}
 		},
 
@@ -88,7 +84,8 @@ module.exports = function( grunt ) {
 			},
 			js: {
 				files: [
-					'<%= jshint.all %>'
+					'<%= jshint.all %>',
+					'<%= dirs.js %>/src/*.js'
 				],
 				tasks: ['jshint', 'uglify']
 			},
@@ -204,7 +201,7 @@ module.exports = function( grunt ) {
 					'!../**.zip',
 					'<%= dirs.js %>/main.min.js'
 				],
-				dest: '../<%= pkg.name %>.zip'
+				dest: '../../<%= pkg.name %>.zip'
 			}
 		},
 
@@ -340,10 +337,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'ftp', ['ftp-deploy'] );
 
 	// Compress
-	grunt.registerTask( 'compress', [
-		'default',
-		'zip'
-	] );
+	grunt.registerTask( 'compress', ['zip'] );
 
 	// Bootstrap Task
 	grunt.registerTask( 'bootstrap', [

@@ -63,7 +63,8 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		 */
 		register_nav_menus(
 			array(
-				'main-menu' => __( 'Main Menu', 'odin' )
+				'main-menu' => __( 'Main Menu', 'odin' ),
+
 			)
 		);
 
@@ -200,6 +201,17 @@ function odin_widgets_init() {
 
 add_action( 'widgets_init', 'odin_widgets_init' );
 
+
+function custom_excerpt_length( $length ) {
+	return 14;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function wpdocs_excerpt_more( $more ) {
+    return ' (...)';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
 /**
  * Flush Rewrite Rules for new CPTs and Taxonomies.
  *
@@ -218,6 +230,13 @@ add_action( 'after_switch_theme', 'odin_flush_rewrite' );
  */
 function odin_enqueue_scripts() {
 	$template_url = get_template_directory_uri();
+
+	// Google Fonts
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900', false );
+	// OWL carrousel
+	wp_enqueue_style( 'carrousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css', false );
+	wp_enqueue_style( 'carrousel-theme', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css', false );
+
 
 	// Loads Odin main stylesheet.
 	wp_enqueue_style( 'odin-style', get_stylesheet_uri(), array(), null, 'all' );
@@ -310,6 +329,22 @@ require_once get_template_directory() . '/inc/optimize.php';
 require_once get_template_directory() . '/inc/template-tags.php';
 
 /**
+ * Load customizer fields + Kirki
+ */
+require_once get_template_directory() . '/inc/customizer.php';
+
+
+/**
+ * Load Advanced Custom Fields
+ */
+require_once get_template_directory() . '/inc/acf/acf.php';
+require_once get_template_directory() . '/inc/fields.php';
+
+
+
+require_once get_template_directory() . '/inc/custom-post.php';
+
+/**
  * WooCommerce compatibility files.
  */
 if ( is_woocommerce_activated() ) {
@@ -318,3 +353,6 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/functions.php';
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 }
+
+
+

@@ -2,8 +2,22 @@
 // Theme Custom Variables
 // ==========================================================================
 
-//
-// Example, Try next line!
-//
+// FONT
+$familia-padrao: 'Raleway', sans-serif;
 
-// $brand-primary: blueviolet;
+
+// DEFAULT GENERAL ANIMATION
+$default-animation:  all 150ms ease-in-out;
+
+
+
+//HEADER
+$cor-header-primary: white;
+$cor-bg-primary-aberto: #2d2d2d;
+$cor-txt-primary-aberto: white;
+$cor-header-background:none ;
+//#58b2b3
+
+//FOOTER
+$cor-bg-footer: white;
+$cor-txt-footer: #2d2d2d;

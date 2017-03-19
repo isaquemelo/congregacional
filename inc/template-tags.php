@@ -103,3 +103,14 @@ if ( ! function_exists( 'odin_the_custom_logo' ) ) {
 		}
 	}
 }
+function get_social_icons_select() {
+	$json = '{"facebook":401,"instagram":403, "google-plus":396,"twitter":407,"youtube":414}';
+
+	$icons = json_decode( $json );
+	$options = array();
+
+	foreach( $icons as $key => $unicode ) {
+		$options[ 'icon-' . $key  ] = get_template_directory_uri() . '/assets/images/iconmoon/' . $unicode . '-' . $key . '.png';
+	}
+	return $options;
+}
