@@ -275,6 +275,84 @@ add_action( 'init', 'pessoas_post_type', 0 );
 
 
 
+// Register Custom Post Type
+function agenda_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Agendas', 'Post Type General Name', 'odin' ),
+		'singular_name'         => _x( 'Agenda', 'Post Type Singular Name', 'odin' ),
+		'menu_name'             => __( 'Agenda', 'odin' ),
+		'name_admin_bar'        => __( 'Agenda', 'odin' ),
+		'archives'              => __( 'Item Archives', 'odin' ),
+		'attributes'            => __( 'Item Attributes', 'odin' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'odin' ),
+		'all_items'             => __( 'All Items', 'odin' ),
+		'add_new_item'          => __( 'Add New Item', 'odin' ),
+		'add_new'               => __( 'Add New', 'odin' ),
+		'new_item'              => __( 'New Item', 'odin' ),
+		'edit_item'             => __( 'Edit Item', 'odin' ),
+		'update_item'           => __( 'Update Item', 'odin' ),
+		'view_item'             => __( 'View Item', 'odin' ),
+		'view_items'            => __( 'View Items', 'odin' ),
+		'search_items'          => __( 'Search Item', 'odin' ),
+		'not_found'             => __( 'Not found', 'odin' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'odin' ),
+		'featured_image'        => __( 'Featured Image', 'odin' ),
+		'set_featured_image'    => __( 'Set featured image', 'odin' ),
+		'remove_featured_image' => __( 'Remove featured image', 'odin' ),
+		'use_featured_image'    => __( 'Use as featured image', 'odin' ),
+		'insert_into_item'      => __( 'Insert into item', 'odin' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'odin' ),
+		'items_list'            => __( 'Items list', 'odin' ),
+		'items_list_navigation' => __( 'Items list navigation', 'odin' ),
+		'filter_items_list'     => __( 'Filter items list', 'odin' ),
+	);
+	$args = array(
+		'label'                 => __( 'Agenda', 'odin' ),
+		'description'           => __( 'Agenda', 'odin' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'comments', 'revisions', ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-book',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'agenda_type', $args );
+
+}
+add_action( 'init', 'agenda_post_type', 0 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

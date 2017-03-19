@@ -373,7 +373,306 @@ get_header();
 
 		<div class="blackBigLine"></div>
 
-<?php echo do_shortcode( '[event_rocket_calendar]' ); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<?php 	$agenda_args = array(
+					'post_type' => 'agenda_type',
+					'posts_per_page' => 5,
+					'meta_key'	=> 'data',
+					'orderby'	=> 'meta_value_num',
+					'order'		=> 'ASC'
+
+
+				);
+
+			$query_agenda = new WP_Query($agenda_args);
+		?>
+
+
+		<?php if ( $query_agenda -> have_posts() ) : ?>
+
+
+			<section class="typeAgenda agenda_type" style="
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							<?php if (has_post_thumbnail()): ?>
+
+								background: url('<?php  the_post_thumbnail_url(); ?>')
+
+
+							<?php endif; ?>
+
+							<?php if (get_field('cor_de_fundo')){
+									echo ';background-color:';
+									the_field('cor_de_fundo');
+								}
+							?>
+
+							">
+
+
+					<div class="container infoHD">
+
+							<header class="infoHeader">
+									<div class="peopleTitle">
+										EVENTOS A SEGUIR
+									</div>
+
+									<div class="bigTitle col-md-6">
+										NOSSA AGENDA <br/>MENSAL
+									</div>
+
+							</header>
+
+
+
+					</div>
+
+					<div class="container possHold">
+							<div class="row">
+
+
+
+								<?php while( $query_agenda -> have_posts() ):
+										$query_agenda -> the_post(); ?>
+
+
+
+
+										<div class="item col-md-8">
+											<div class="leftSch col-md-3">
+
+												<?php
+
+														$date = get_field('data', false, false);;
+														$date = new DateTime($date);
+
+
+													?>
+
+												<div class="theDateSh">
+													<?php echo $date->format('j M Y'); ?>
+													<?php echo date_i18n( 'D', $date->getTimeStamp() ); ?>
+
+												</div>
+												<div class="theDayTime">
+													<?php $time = get_field('horario');?>
+													<?php $diasem = date_i18n( 'D', $date->getTimeStamp() ); ?>
+													<?php echo $diasem, ' ' ,$time, 'H'; ?>
+												</div>
+
+
+
+
+											</div>
+
+											<div class="rightSch col-md-6">
+												<section class="boxesTitle">
+													<?php the_title() ?>
+												</section>
+												<div class="blackLine"></div>
+												<span class="boxesContent col-md-11">
+													<?php the_excerpt();?>
+												</span>
+											</div>
+
+										</div>
+
+
+
+
+
+
+								<?php endwhile; ?>
+					</div>
+				</div>
+			</section>
+			<?php wp_reset_postdata(); ?>
+		<?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<?php 	$blog_args = array(
+					'post_type' => 'post',
+
+				);
+
+			$query_blog = new WP_Query($blog_args);
+		?>
+
+
+		<?php if ( $query_blog -> have_posts() ) : ?>
+
+
+			<section class="typeBlog blog_type <?php if(get_field('ocupar_toda_tela')){ echo 'fullSize ';} ?>" style="
+
+							<?php if (has_post_thumbnail()): ?>
+
+								background: url('<?php  the_post_thumbnail_url(); ?>')
+
+
+							<?php endif; ?>
+
+							<?php if (get_field('cor_de_fundo')){
+									echo ';background-color:';
+									the_field('cor_de_fundo');
+								}
+							?>
+
+							">
+
+					<div class="container infoHD">
+
+							<header class="infoHeader">
+									<div class="peopleTitle">
+										COORDENAÇÃO
+									</div>
+
+									<div class="bigTitle col-md-6">
+										UM POUCO SOBRE NOSSOS ORIENTADORES
+									</div>
+
+							</header>
+
+
+
+					</div>
+			</section>
+
+			<section class="peopleList">
+				<div class="container">
+					<div class="row">
+
+						<?php while( $query_blog -> have_posts() ):
+								$query_blog -> the_post(); ?>
+
+							<div class="mixitupclass">
+
+								<div class="mix col-md-3 <?php the_field('cargo'); ?>">
+									<div class="personImage">
+										<?php the_post_thumbnail(); ?>
+									</div>
+									<div class="userName">
+										<?php the_title(); ?>
+									</div>
+									<?php if ( get_field('cargo') ): ?>
+										<div class="userJob">
+											<?php the_field('cargo'); ?>
+										</div>
+									<?php endif; ?>
+
+									<div class="personExcerpt">
+										<?php the_excerpt(); ?>
+									</div>
+								</div>
+
+							</div>
+
+
+
+
+
+
+
+
+
+
+
+						<?php endwhile; ?>
+					</div>
+				</div>
+			</section>
+			<?php wp_reset_postdata(); ?>
+		<?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

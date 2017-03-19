@@ -337,7 +337,7 @@ require_once get_template_directory() . '/inc/customizer.php';
 /**
  * Load Advanced Custom Fields
  */
-require_once get_template_directory() . '/inc/acf/acf.php';
+//require_once get_template_directory() . '/inc/acf/acf.php';
 require_once get_template_directory() . '/inc/fields.php';
 
 

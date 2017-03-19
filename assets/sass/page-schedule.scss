@@ -1,0 +1,128 @@
+@font-face {
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: normal;
+    src: url(../fonts/Gotham-Book.otf);
+}
+@font-face {
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: bold;
+    src: url(../fonts/Gotham-Bold.otf);
+}
+@font-face {
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: lighter;
+    src: url(../fonts/Gotham-Light.otf);
+}
+
+@font-face {
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: 900;
+    src: url(../fonts/Gotham-Ultra.otf);
+}
+ul.nav li.dropdown > ul.dropdown-menu{
+    margin: 0;
+    margin-left: 14px;
+}
+.agenda_type{
+	.peopleTitle:after {
+	    content: " ";
+	    display: block;
+	    width: 38px;
+	    height: 3px;
+	    background: #3c3c3c;
+	    margin-top: 3px;
+	}
+	.peopleTitle {
+	    font-family: $familia-padrao;
+	    text-transform: uppercase;
+	    font-size: 1.15em;
+	    color: #3c3c3c;
+	    font-weight: 700;
+	}
+
+	.bigTitle {
+	    font-size: 3em;
+	    margin-top: 15px;
+	    font-family: $familia-padrao;
+	    padding-left: 0px;
+	    font-weight: 500;
+	    line-height: 50px;
+	    float: initial;
+	    color: #3c3c3c;
+	}
+	margin-top: 48px;
+	background: #fff;
+	padding-top: 70px;
+    padding-bottom: 170px;
+
+
+	.leftSch.col-md-3, .rightSch.col-md-6{
+		padding-left: 5px;
+	}
+	.theDateSh {
+	    font-family: $familia-secundaria;
+	    text-transform: uppercase;
+	    letter-spacing: -0.5px;
+	    font-weight: 400;
+	    color: #2d2d2d;
+	}
+	.theDayTime {
+	    font-family: $familia-secundaria;
+	    font-weight: bold;
+	    text-transform: uppercase;
+	    font-size: 1.8em;
+	    margin-top: -3px;
+	    letter-spacing: -2px;
+	    color: #3c3c3c;
+	}
+	.leftSch {
+    	text-align: right;
+    	border-right: 2px solid #474747;
+    	padding-top: 15px;
+	}
+	.rightSch {
+    	border-left: 2px solid #474747;
+    	margin-left: -2px;
+    	padding-top: 15px;
+		padding-bottom: 30px;
+	}
+
+	.boxesTitle {
+	    font-family: $familia-secundaria;
+	    font-weight: bold;
+	    text-transform: uppercase;
+	    font-size: 1.8em;
+	    letter-spacing: -2px;
+	    color: #3c3c3c;
+	    margin-left: 0px!important;
+	    padding-left: 15px!important;
+	}
+
+	.boxesContent.col-md-11 {
+	    font-family: $familia-secundaria;
+	    line-height: 21px;
+	    font-size: 1em;
+	}
+
+	.leftSch:after {
+	    content: " ";
+	    background: #569697;
+	    width: 15px;
+	    height: 15px;
+	    display: block;
+	    border-radius: 50%;
+	    position: relative;
+	    float: right;
+	    left: 23.99px;
+	    z-index: 9;
+	}
+	.item {
+    	margin-left: 40px;
+	}
+
+
+}
