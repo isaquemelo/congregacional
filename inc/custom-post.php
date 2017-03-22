@@ -91,11 +91,17 @@ function blocos_post_type() {
 		'items_list_navigation' => __( 'Items list navigation', 'odin' ),
 		'filter_items_list'     => __( 'Filter items list', 'odin' ),
 	);
+	$rewrite = array(
+		'slug'                  => 'bloco',
+		'with_front'            => false,
+		'pages'                 => true,
+		'feeds'                 => true,
+	);
 	$args = array(
 		'label'                 => __( 'Bloco', 'odin' ),
 		'description'           => __( 'Criar Blocos de Conteudo', 'odin' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'excerpt', ),
+		'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail'),
 		'hierarchical'          => true,
 		'public'                => true,
 		'show_ui'               => true,
@@ -108,6 +114,7 @@ function blocos_post_type() {
 		'has_archive'           => true,
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
+		'rewrite'               => $rewrite,
 		'capability_type'       => 'page',
 	);
 	register_post_type( 'blocos_type', $args );
@@ -331,6 +338,130 @@ function agenda_post_type() {
 
 }
 add_action( 'init', 'agenda_post_type', 0 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Register Custom Post Type
+function contato_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Contatos', 'Post Type General Name', 'odin' ),
+		'singular_name'         => _x( 'Contato', 'Post Type Singular Name', 'odin' ),
+		'menu_name'             => __( 'Contato por Email', 'odin' ),
+		'name_admin_bar'        => __( 'Contato por Email', 'odin' ),
+		'archives'              => __( 'Item Archives', 'odin' ),
+		'attributes'            => __( 'Item Attributes', 'odin' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'odin' ),
+		'all_items'             => __( 'All Items', 'odin' ),
+		'add_new_item'          => __( 'Add New Item', 'odin' ),
+		'add_new'               => __( 'Add New', 'odin' ),
+		'new_item'              => __( 'New Item', 'odin' ),
+		'edit_item'             => __( 'Edit Item', 'odin' ),
+		'update_item'           => __( 'Update Item', 'odin' ),
+		'view_item'             => __( 'View Item', 'odin' ),
+		'view_items'            => __( 'View Items', 'odin' ),
+		'search_items'          => __( 'Search Item', 'odin' ),
+		'not_found'             => __( 'Not found', 'odin' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'odin' ),
+		'featured_image'        => __( 'Featured Image', 'odin' ),
+		'set_featured_image'    => __( 'Set featured image', 'odin' ),
+		'remove_featured_image' => __( 'Remove featured image', 'odin' ),
+		'use_featured_image'    => __( 'Use as featured image', 'odin' ),
+		'insert_into_item'      => __( 'Insert into item', 'odin' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'odin' ),
+		'items_list'            => __( 'Items list', 'odin' ),
+		'items_list_navigation' => __( 'Items list navigation', 'odin' ),
+		'filter_items_list'     => __( 'Filter items list', 'odin' ),
+	);
+	$args = array(
+		'label'                 => __( 'Contato', 'odin' ),
+		'description'           => __( 'Contato', 'odin' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail'),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-businessman',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'contato_type', $args );
+
+}
+add_action( 'init', 'contato_post_type', 0 );
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

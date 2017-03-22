@@ -1,0 +1,53 @@
+//FOOTER CSS
+
+.footerMenuTitle {
+	text-transform:uppercase;
+	font-weight: bold;
+}
+.page-template-page-appointment {
+	#footer{
+		display: none;
+	}
+}
+footer#footer {
+	background: #fff;
+	color: #2d2d2d;
+	font-family: $familia-padrao;
+	padding-bottom: 25px;
+	padding-top: 20px;
+	position: initial;
+	width: 100%;
+	bottom:-70px;
+	height: initial!important;
+}
+.fp-section footer#footer {
+	/*margin-top:70px;*/
+}
+.footerMenu {
+	text-transform: uppercase;
+}
+footer{
+	height: auto!important;
+	position: initial!important;
+}
+.footerMenu a{
+	text-decoration: underline;
+	color: #2d2d2d;
+}
+.footerMenu ul {
+	list-style: none;
+	margin-left: 0px;
+    padding-left: 0px;
+    margin-top: 10px;
+
+}
+.footerMenu ul li {
+	padding-top: 13px;
+}
+.footerMenu {
+	text-align:left;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 1.15em;
+}
+

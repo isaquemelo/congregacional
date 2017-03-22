@@ -1,6 +1,4 @@
-#footer{
-	display: none;
-}
+
 .buttons {
     margin-top: 20px;
 }
@@ -76,15 +74,17 @@ div#button.active {
     padding-bottom: 170px;
 
 }
+
+.peopleList{
 	.personImage {
 	    border-radius: 50%;
 	    overflow: hidden;
 	    border: 5.5px solid #fff;
 	    width: 180px;
 	}
-	section.peopleList {
-    	margin-top: -95px;
-	}
+	margin-top: -95px;
+}
+
 
 	.userName {
 	    font-family: $familia-padrao;
@@ -112,3 +112,48 @@ div#button.active {
 	    padding-right: 50px;
 	}
 
+@media all and (max-width: 768px) {
+	.infoHD{
+		.bigTitle{
+			font-size: 2.5em;
+		}
+		.peopleTitle {
+		    display: flex;
+		    align-items: center;
+		    flex-flow: column;
+		}
+		.bigTitle {
+    		text-align: center;
+		}
+
+		.buttons {
+		    display: none;
+		    flex-flow: column;
+		}
+
+		#button {
+		    margin-left: 0px;
+		}
+
+	}
+	.peopleList{
+		.mix {
+		    display: flex!important;
+		    justify-content: center;
+		    align-items: center;
+		    flex-flow: column;
+		    text-align: center;
+		}
+
+		.personExcerpt {
+		    padding: 0px 35px;
+		}
+
+		.flexMobile {
+		    display: flex;
+		    flex-flow: column;
+		    align-items: center;
+		}
+	}
+
+}

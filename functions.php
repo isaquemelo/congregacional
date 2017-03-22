@@ -180,6 +180,22 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 
 add_action( 'after_setup_theme', 'odin_setup_features' );
 
+
+
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/logoLogin.png)!important;
+			height: 209px!important;
+		    width: 209px!important;
+		    background-size: 192px auto!important;
+		    background-repeat: no-repeat;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+
 /**
  * Register widget areas.
  *
@@ -195,6 +211,50 @@ function odin_widgets_init() {
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widgettitle widget-title">',
 			'after_title' => '</h3>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name' => __( 'Footer 1', 'odin' ),
+			'id' => 'footer-sidebar',
+			'description' => __( 'Footer Sidebar', 'odin' ),
+			'before_widget' => '<div class="footerMenu col-md-3">',
+			'after_widget' => '</div>',
+			'before_title' => '<span class="footerMenuTitle">',
+			'after_title' => '</span>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name' => __( 'Footer 2', 'odin' ),
+			'id' => 'footer-sidebar-2',
+			'description' => __( 'Footer Sidebar', 'odin' ),
+			'before_widget' => '<div class="footerMenu col-md-3">',
+			'after_widget' => '</div>',
+			'before_title' => '<span class="footerMenuTitle">',
+			'after_title' => '</span>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name' => __( 'Footer 3', 'odin' ),
+			'id' => 'footer-sidebar-3',
+			'description' => __( 'Footer Sidebar', 'odin' ),
+			'before_widget' => '<div class="footerMenu col-md-3">',
+			'after_widget' => '</div>',
+			'before_title' => '<span class="footerMenuTitle">',
+			'after_title' => '</span>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name' => __( 'Footer 4', 'odin' ),
+			'id' => 'footer-sidebar-4',
+			'description' => __( 'Footer Sidebar', 'odin' ),
+			'before_widget' => '<div class="footerMenu col-md-3">',
+			'after_widget' => '</div>',
+			'before_title' => '<span class="footerMenuTitle">',
+			'after_title' => '</span>',
 		)
 	);
 }
@@ -337,7 +397,7 @@ require_once get_template_directory() . '/inc/customizer.php';
 /**
  * Load Advanced Custom Fields
  */
-//require_once get_template_directory() . '/inc/acf/acf.php';
+// require_once get_template_directory() . '/inc/acfp/acf.php';
 require_once get_template_directory() . '/inc/fields.php';
 
 

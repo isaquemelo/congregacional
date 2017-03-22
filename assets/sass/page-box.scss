@@ -150,6 +150,57 @@
 
 }
 
+.itselfBlock{
+	.theBlocKlink {
+	    display: flex;
+	    flex-flow: column;
+	    justify-content: center;
+	    align-items: center;
+	    text-align: center;
+	    padding-top: 160px;
+	}
+	.theblockTitle {
+	    font-family: $familia-padrao;
+	    font-size: 4em;
+	    letter-spacing: -5px;
+	    font-weight: 700;
+	    color: white;
+	    margin-bottom: 30px;
+	}
+	.theblockTitle:after {
+	    content: ">";
+	    font-size: 0.9em;
+	    display: inline-block;
+	}
+
+	.theBlockContent {
+	    font-family: $familia-padrao;
+	    color: white;
+	    line-height: 27px;
+	    padding: 0px 50px;
+	    font-size: 1.02em;
+	    margin-bottom: 70px;
+	}
+
+}
+
+blockquote:before {
+    content: "'' ";
+    display: block;
+    font-size: 4EM;
+    font-weight: bold;
+    margin-top: 25px;
+}
+blockquote:after {
+    content: "'' ";
+    display: block;
+    font-size: 4EM;
+    font-weight: bold;
+    margin-top: 25px;
+}
+blockquote {
+    border: 0px;
+}
 
 @media all and (max-width: 768px) {
 	.page-template-page-box{
@@ -160,6 +211,9 @@
 	}
 
 	.containerBox{
+			span.boxesContent {
+			    padding: 0px 36px!important;
+			}
 			text-align: center!Important;
     		margin-bottom: 40px!Important;
     		padding-left: 0px!Important;

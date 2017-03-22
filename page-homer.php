@@ -43,7 +43,7 @@ get_header();
 								}
 							?>
 
-							">
+							" id="1">
 
 					<div class="container">
 						<div class="row">
@@ -124,7 +124,7 @@ get_header();
 								}
 							?>
 
-							">
+							" id="2">
 
 					<div class="container">
 						<div class="row flexFlowColunm">
@@ -193,20 +193,13 @@ get_header();
 
 			<section class="typeBox blocos_type <?php if(get_field('ocupar_toda_tela')){ echo 'fullSize ';} ?>" style="
 
-							<?php if (has_post_thumbnail()): ?>
-
-								background: url('<?php  the_post_thumbnail_url(); ?>')
-
-
-							<?php endif; ?>
-
 							<?php if (get_field('cor_de_fundo')){
 									echo ';background-color:';
 									the_field('cor_de_fundo');
 								}
 							?>
 
-							">
+							" id="3">
 					<div class="container">
 							<div class="row">
 
@@ -289,7 +282,7 @@ get_header();
 								}
 							?>
 
-							">
+							" id="4">
 
 					<div class="container infoHD">
 
@@ -303,12 +296,14 @@ get_header();
 									</div>
 
 									<div class="buttons">
-										<div class="filter" id="button" data-filter="all">Todos</div>
-										<div class="filter" id="button" data-filter=".pastor">Pastor</div>
+
+										<div class="filter" id="button" data-filter=".pastor">Pastores</div>
 										<div class="filter" id="button" data-filter=".presibitero">Presibitero</div>
 
 										<div class="filter" id="button" data-filter=".diacono">Diacono</div>
 										<div class="filter" id="button" data-filter=".lideranca">Liderança</div>
+
+										<div class="filter" id="button" data-filter="all">Todos</div>
 
 
 
@@ -321,7 +316,7 @@ get_header();
 					</div>
 			</section>
 
-			<section class="peopleList">
+			<section class="peopleList" id="5">
 				<div class="container">
 					<div class="row">
 
@@ -331,20 +326,22 @@ get_header();
 							<div class="mixitupclass">
 
 								<div class="mix col-md-3 <?php the_field('cargo'); ?>">
-									<div class="personImage">
-										<?php the_post_thumbnail(); ?>
-									</div>
-									<div class="userName">
-										<?php the_title(); ?>
-									</div>
-									<?php if ( get_field('cargo') ): ?>
-										<div class="userJob">
-											<?php the_field('cargo'); ?>
+									<div class="flexMobile">
+										<div class="personImage">
+											<?php the_post_thumbnail(); ?>
 										</div>
-									<?php endif; ?>
+										<div class="userName">
+											<?php the_title(); ?>
+										</div>
+										<?php if ( get_field('cargo') ): ?>
+											<div class="userJob">
+												<?php the_field('cargo'); ?>
+											</div>
+										<?php endif; ?>
 
-									<div class="personExcerpt">
-										<?php the_excerpt(); ?>
+										<div class="personExcerpt">
+											<?php the_excerpt(); ?>
+										</div>
 									</div>
 								</div>
 
@@ -447,7 +444,7 @@ get_header();
 								}
 							?>
 
-							">
+							" id="6">
 
 
 					<div class="container infoHD">
@@ -556,6 +553,8 @@ get_header();
 
 		<?php 	$blog_args = array(
 					'post_type' => 'post',
+					'posts_per_page' => '6',
+					'post_status' => 'publish'
 
 				);
 
@@ -581,17 +580,19 @@ get_header();
 								}
 							?>
 
-							">
+							" id="7">
 
 					<div class="container infoHD">
 
 							<header class="infoHeader">
-									<div class="peopleTitle">
-										COORDENAÇÃO
-									</div>
+
 
 									<div class="bigTitle col-md-6">
-										UM POUCO SOBRE NOSSOS ORIENTADORES
+										POSTAGENS ATUAIS
+									</div>
+
+									<div class="peopleTitle">
+										ATUALIZE-SE
 									</div>
 
 							</header>
@@ -601,32 +602,43 @@ get_header();
 					</div>
 			</section>
 
-			<section class="peopleList">
+			<section class="blogList" id="8">
 				<div class="container">
 					<div class="row">
 
 						<?php while( $query_blog -> have_posts() ):
 								$query_blog -> the_post(); ?>
 
-							<div class="mixitupclass">
+							<div class="col-md-4 blogPost">
 
-								<div class="mix col-md-3 <?php the_field('cargo'); ?>">
-									<div class="personImage">
-										<?php the_post_thumbnail(); ?>
-									</div>
-									<div class="userName">
-										<?php the_title(); ?>
-									</div>
-									<?php if ( get_field('cargo') ): ?>
-										<div class="userJob">
-											<?php the_field('cargo'); ?>
-										</div>
-									<?php endif; ?>
 
-									<div class="personExcerpt">
-										<?php the_excerpt(); ?>
+									<div class="blogImage">
+										<?php the_post_thumbnail('medium'); ?>
 									</div>
-								</div>
+
+									<div class="postCategories">
+										<?php the_category( ); ?>
+									</div>
+
+									<div class="blogTitle">
+										<!-- <a href="<?php the_permalink();?>"> -->
+											<?php the_title( ); ?>
+										<!-- </a> -->
+									</div>
+
+									<div class="blogExcerpt">
+										<?php the_excerpt( ); ?>
+									</div>
+
+									<div class="postInfo">
+										<span class="blogAuthor">
+											<?php the_author( ); ?>
+										</span>
+										<span class="blogTime">
+											<?php the_time('d F, Y.'); ?>
+										</span>
+									</div>
+
 
 							</div>
 
@@ -646,6 +658,137 @@ get_header();
 			</section>
 			<?php wp_reset_postdata(); ?>
 		<?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<?php 	$contato_args = array(
+					'post_type' => 'contato_type',
+					'posts_per_page' => 1,
+				);
+
+			$query_contato = new WP_Query($contato_args);
+		?>
+
+
+		<?php if ( $query_contato -> have_posts() ) : ?>
+			<?php while( $query_contato -> have_posts() ):
+					$query_contato -> the_post(); ?>
+
+
+
+				<section class="typeInformativo <?php echo get_post_type();?> <?php if(get_field('ocupar_toda_tela')){ echo 'fullSize ';} ?>" style="
+
+							<?php if (has_post_thumbnail()): ?>
+
+								background: url('<?php  the_post_thumbnail_url(); ?>')
+
+
+							<?php endif; ?>
+
+							<?php if (get_field('cor_de_fundo')){
+									echo ';background-color:';
+									the_field('cor_de_fundo');
+								}
+							?>
+
+							" id="9">
+
+					<div class="container">
+						<div class="row flexFlowColunmC">
+
+
+							<div class="col-md-6">
+
+								<div class="contatoTitle">
+									<?php the_title();?>
+								</div>
+
+								<div class="contatoContent">
+									<?php the_content(); ?>
+								</div>
+
+							</div>
+
+							<div class="col-md-5 formContato pull-right">
+								<?php if ( $value = get_post_meta( get_the_ID(), 'shortcode_do_formulario', true ) ) : ?>
+
+										<?php echo apply_filters( 'the_content', $value );?>
+
+								<?php endif;?>
+							</div>
+
+
+
+						</div>
+					</div>
+
+				</section>
+
+
+
+			<?php endwhile; ?>
+			<?php wp_reset_postdata(); ?>
+		<?php endif; ?>
+
+
+
+
+
+
+
+
 
 
 
@@ -726,3 +869,42 @@ get_header();
 	</div>
 <?php
 get_footer();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

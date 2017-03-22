@@ -12,9 +12,26 @@
 
 
 	<footer id="footer" role="contentinfo">
-		<div class="container">
-			<p>&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a> - <?php _e( 'All rights reserved', 'odin' ); ?> | <?php echo sprintf( __( 'Powered by the <a href="%s" rel="nofollow" target="_blank">Odin</a> forces and <a href="%s" rel="nofollow" target="_blank">WordPress</a>.', 'odin' ), 'http://wpod.in/', 'http://wordpress.org/' ); ?></p>
-		</div><!-- .container -->
+				<div class="container-fluid">
+					<div class="col-md-12">
+						<?php if ( is_active_sidebar( 'footer-sidebar' ) ) : ?>
+							<?php dynamic_sidebar( 'footer-sidebar' );?>
+						<?php endif;?>
+						<?php if ( is_active_sidebar( 'footer-sidebar-2' ) ) : ?>
+							<?php dynamic_sidebar( 'footer-sidebar-2' );?>
+						<?php endif;?>
+						<?php if ( is_active_sidebar( 'footer-sidebar-3' ) ) : ?>
+							<?php dynamic_sidebar( 'footer-sidebar-3' );?>
+						<?php endif;?>
+						<?php if ( is_active_sidebar( 'footer-sidebar-4' ) ) : ?>
+							<?php dynamic_sidebar( 'footer-sidebar-4' );?>
+						<?php endif;?>
+
+
+
+					</div>
+
+				</div><!-- .container -->
 	</footer><!-- #footer -->
 
 	<?php wp_footer(); ?>
