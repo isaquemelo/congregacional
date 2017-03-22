@@ -50,7 +50,7 @@
 
 						</div>
 
-						<div id="subnav" class="desactive">
+						<div id="subnav" class="desactive ">
 						    <?php
 										wp_nav_menu(
 											array(

@@ -436,3 +436,43 @@
 @media all and (min-width: 768px) {
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*HACK*/
+
+.dropdown-menu {
+    position: initial!important;
+    top: initial!important;
+    left: initial!important;
+    z-index: initial!important;
+    display: initial!important;
+    float: initial!important;
+    min-width: initial!important;
+    padding: initial!important;
+    margin: initial!important;
+    list-style: initial!important;
+    font-size: initial!important;
+    text-align: initial!important;
+    background-color: initial!important;
+    border: initial!important;
+    border:initial!important;
+    border-radius: initial!important;
+
+    box-shadow:initial!important;
+    background-clip:initial!important;
+}
+.dropdown-menu li, .dropdown-menu li a:hover{
+	background: none;
+	color: white!Important;
+}

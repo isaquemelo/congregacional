@@ -33,6 +33,10 @@ jQuery(document).ready(function($) {
 
 	})
 
+
+
+
+
 	$('.buttomKnow').click(function(e) {
 	  			$('.typeSlider').addClass('animacao');
 	  			 setTimeout(function() {
