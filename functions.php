@@ -334,6 +334,14 @@ function odin_enqueue_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'odin_enqueue_scripts', 1 );
 
+
+add_filter( 'wp_image_editors', 'change_graphic_lib' );
+
+function change_graphic_lib($array) {
+return array( 'WP_Image_Editor_GD', 'WP_Image_Editor_Imagick' );
+}
+
+
 /**
  * Odin custom stylesheet URI.
  *
