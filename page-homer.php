@@ -16,6 +16,7 @@ get_header();
 
 		<?php 	$slider_args = array(
 					'post_type' => 'slider_type',
+					'posts_per_page' => '1'
 				);
 
 			$query_slider = new WP_Query($slider_args);
@@ -27,47 +28,52 @@ get_header();
 					$query_slider -> the_post(); ?>
 
 
+				<div class="holdSlide">
 
-				<section class="typeSlider <?php echo get_post_type();?> <?php if(get_field('ocupar_toda_tela')){ echo 'fullSize ';} ?>" style="
+					<section class="typeSlider <?php echo get_post_type();?> <?php if(get_field('ocupar_toda_tela')){ echo 'fullSize ';} ?>" style="
 
-							<?php if (has_post_thumbnail()): ?>
+								<?php if (has_post_thumbnail()): ?>
 
-								background: url('<?php  the_post_thumbnail_url(); ?>')
+									background: url('<?php  the_post_thumbnail_url(); ?>')
 
 
-							<?php endif; ?>
-
-							<?php if (get_field('cor_de_fundo')){
-									echo ';background-color:';
-									the_field('cor_de_fundo');
-								}
-							?>
-
-							" id="1">
-
-					<div class="container">
-						<div class="row">
-
-							<div class="centerContent">
-
-								<span class="titleSlider col-md-8">
-									<?php the_title( ); ?>
-								</span>
-
-								<?php  if(get_field('link_botao')): ?>
-									<a href="<?php the_field('link_botao'); ?>" class="buttomKnow">
-														conheça
-									</a>
 								<?php endif; ?>
 
-							</div>
+								<?php if (get_field('cor_de_fundo')){
+										echo ';background-color:';
+										the_field('cor_de_fundo');
+									}
+								?>
 
+								" id="1">
+
+
+
+					</section>
+					<div class="centered">
+						<div class="container">
+							<div class="row">
+
+								<div class="centerContent">
+
+									<span class="titleSlider col-md-8">
+										<?php the_title( ); ?>
+									</span>
+									<script type="text/javascript">
+										var link = "<?php the_field('link_botao'); ?>";
+									</script>
+									<?php  if(get_field('link_botao')): ?>
+										<a href="#" class="buttomKnow">
+															conheça
+										</a>
+									<?php endif; ?>
+
+								</div>
+
+							</div>
 						</div>
 					</div>
-
-				</section>
-
-
+				</div>
 
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>

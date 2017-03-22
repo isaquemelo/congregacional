@@ -18,38 +18,7 @@
 		margin-top: 5vh;
 	}
 
-	.titleSlider{
-		font-family: $familia-padrao;
-		font-size: 3em;
-	    color: white;
-	    text-transform: uppercase;
-	    text-align: center;
-	    font-weight: 800;
-	    letter-spacing: 0.8px;
-	    line-height: 53px;
-	}
 
-	a.buttomKnow {
-	    border: 2px solid white;
-	    padding: 9px 29px;
-	    color: white;
-	    border-radius: 100px;
-	    text-transform: uppercase;
-	    font-family: $familia-padrao;
-	    font-size: 0.98em;
-	    margin-top: 35px;
-	    font-weight: 700;
-	    letter-spacing: 0.8px;
-	    line-height: initial;
-	    text-decoration: none;
-    	transition: all 150ms ease-in;
-
-	}
-
-	a.buttomKnow:hover {
-	    background: white;
-	    color: #2d2d2d;
-	}
 
 	.scrollDown {
 	    display: flex;
@@ -84,4 +53,81 @@
 
 }
 
+.centerContent {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleSlider{
+		font-family: $familia-padrao;
+		font-size: 3em;
+	    color: white;
+	    text-transform: uppercase;
+	    text-align: center;
+	    font-weight: 800;
+	    letter-spacing: 0.8px;
+	    line-height: 53px;
+	}
+
+	a.buttomKnow {
+	    border: 2px solid white;
+	    padding: 9px 29px;
+	    color: white;
+	    border-radius: 100px;
+	    text-transform: uppercase;
+	    font-family: $familia-padrao;
+	    font-size: 0.98em;
+	    margin-top: 35px;
+	    font-weight: 700;
+	    letter-spacing: 0.8px;
+	    line-height: initial;
+	    text-decoration: none;
+    	transition: all 150ms ease-in;
+
+	}
+
+	a.buttomKnow:hover {
+	    background: white;
+	    color: #2d2d2d;
+	}
+
+.centered {
+    position: absolute;
+}
+
+
+@keyframes animacaofundo{
+
+  			40%{
+				filter: brightness(-0.2);
+  			}
+
+  			70%{
+				filter: brightness(1);
+  			}
+
+  			80%{
+  				filter: brightness(5);
+  			}
+
+  			90%{
+				filter: brightness(10);
+
+  			}
+
+  			100%{
+				/*filter: brightness(0);*/
+  			}
+
+  		}
+
+.animacao{
+	animation: animacaofundo 3.0s forwards ease-in-out;
+}
+.titleblack{
+	    text-shadow: 0 0px 50px #fff;
+	transition: all 800ms ease;
+}
 
