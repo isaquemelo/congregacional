@@ -51,30 +51,19 @@ jQuery(document).ready(function($) {
 
 	var action = 1;
 
-	$(".buttomKnow").on("click", viewSomething);
+	$(".holdSlide .buttomKnow").on("click", viewSomething);
 
 	function viewSomething() {
 	    if ( action == 1 ) {
-	        $("a.buttomKnow").attr("href", "#")
+	        $(".holdSlide a.buttomKnow").attr("href", "#")
 	        action = 2;
 	    } else {
-	        $("a.buttomKnow").attr("href", link)
+	        $(".holdSlide a.buttomKnow").attr("href", link)
 	        action = 1;
 	    }
 	}
 
-	$('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
+
 
 
 
