@@ -400,6 +400,8 @@ require_once get_template_directory() . '/inc/template-tags.php';
  * Load customizer fields + Kirki
  */
 require_once get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/kirki/kirki.php';
+require_once get_template_directory() . '/inc/kirki-fields.php';
 
 
 
