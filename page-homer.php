@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Template home pager
+ * Template Name: Template Home
 
  *
  * The template for displaying pages with sidebar.
