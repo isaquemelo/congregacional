@@ -4,13 +4,18 @@ jQuery(document).ready(function($) {
 
 	$windowSize = $(window).height();
 	$windowSizeW = $(window).width();
-	$('.fullSize').css({
-		height: $windowSize,
+
+	if ($windowSizeW > 700){
+			$('.fullSize').css({
+				height: $windowSize,
+			});
+	}else{
+		$('.fullSize').css({
+				'min-height': $windowSize,
+			});
 
 
-
-
-	});
+	}
 
 	$( '.centered' ).center({
 	  			 against : '.holdSlide',
