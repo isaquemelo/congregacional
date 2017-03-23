@@ -421,8 +421,15 @@ ul.dropdown-menu li a {
 
 
 }
-
+#wpadminbar{
+	display: none;
+}
 @media all and (max-width: 768px) {
+
+	html {
+		margin-top: 0px!IMPORTANT;
+
+	}
 	ul#menu-left-menu li:last-child {
 			display: none!important;
 	}

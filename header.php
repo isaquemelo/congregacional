@@ -8,7 +8,7 @@
  * @since 2.2.0
  */
 ?><!DOCTYPE html>
-<html class="no-js" <?php language_attributes(); ?>>
+<html class="no-js" <?php language_attributes(); ?> style="margin:0px!IMPORTANT;">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
