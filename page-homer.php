@@ -28,7 +28,7 @@ get_header();
 					$query_slider -> the_post(); ?>
 
 
-				<div class="holdSlide">
+				<div class="holdSlide fullSize">
 
 					<section class="typeSlider <?php echo get_post_type();?> <?php if(get_field('ocupar_toda_tela')){ echo 'fullSize ';} ?>" style="
 
@@ -50,6 +50,7 @@ get_header();
 
 
 					</section>
+
 					<div class="centered">
 						<div class="container">
 							<div class="row">

@@ -464,7 +464,7 @@
     list-style: initial!important;
     font-size: initial!important;
     text-align: initial!important;
-    background-color: initial!important;
+    background-color: none!important;
     border: initial!important;
     border:initial!important;
     border-radius: initial!important;
@@ -473,6 +473,6 @@
     background-clip:initial!important;
 }
 .dropdown-menu li, .dropdown-menu li a:hover{
-	background: none;
+	background: none!Important;
 	color: white!Important;
 }
