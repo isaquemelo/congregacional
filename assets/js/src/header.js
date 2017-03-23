@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
 
  	$(window).scroll(function(e) {
  		$windowHeight = $(window).height();
- 		$whatiwant = $windowHeight * 2 -150;
+ 		$whatiwant = $windowHeight / 4;
  		$scrollTop  = $(window).scrollTop();
  		if ($scrollTop > $whatiwant) {
  			$('#header').addClass('header-background', 500)

@@ -57,7 +57,7 @@ get_header();
 
 								<div class="centerContent">
 
-									<span class="titleSlider col-md-8">
+									<span class="titleSlider col-md-8 col-xs-11">
 										<?php the_title( ); ?>
 									</span>
 									<script type="text/javascript">
@@ -554,117 +554,6 @@ get_header();
 
 
 
-
-
-
-
-		<?php 	$blog_args = array(
-					'post_type' => 'post',
-					'posts_per_page' => '6',
-					'post_status' => 'publish'
-
-				);
-
-			$query_blog = new WP_Query($blog_args);
-		?>
-
-
-		<?php if ( $query_blog -> have_posts() ) : ?>
-
-
-			<section class="typeBlog blog_type <?php if(get_field('ocupar_toda_tela')){ echo 'fullSize ';} ?>" style="
-
-							<?php if (has_post_thumbnail()): ?>
-
-								background: url('<?php  the_post_thumbnail_url(); ?>')
-
-
-							<?php endif; ?>
-
-							<?php if (get_field('cor_de_fundo')){
-									echo ';background-color:';
-									the_field('cor_de_fundo');
-								}
-							?>
-
-							" id="7">
-
-					<div class="container infoHD">
-
-							<header class="infoHeader">
-
-
-									<div class="bigTitle col-md-6">
-										POSTAGENS ATUAIS
-									</div>
-
-									<div class="peopleTitle">
-										ATUALIZE-SE
-									</div>
-
-							</header>
-
-
-
-					</div>
-			</section>
-
-			<section class="blogList" id="8">
-				<div class="container">
-					<div class="row">
-
-						<?php while( $query_blog -> have_posts() ):
-								$query_blog -> the_post(); ?>
-
-							<div class="col-md-4 blogPost">
-
-
-									<div class="blogImage">
-										<?php the_post_thumbnail('medium'); ?>
-									</div>
-
-									<div class="postCategories">
-										<?php the_category( ); ?>
-									</div>
-
-									<div class="blogTitle">
-										<!-- <a href="<?php the_permalink();?>"> -->
-											<?php the_title( ); ?>
-										<!-- </a> -->
-									</div>
-
-									<div class="blogExcerpt">
-										<?php the_excerpt( ); ?>
-									</div>
-
-									<div class="postInfo">
-										<span class="blogAuthor">
-											<?php the_author( ); ?>
-										</span>
-										<span class="blogTime">
-											<?php the_time('d F, Y.'); ?>
-										</span>
-									</div>
-
-
-							</div>
-
-
-
-
-
-
-
-
-
-
-
-						<?php endwhile; ?>
-					</div>
-				</div>
-			</section>
-			<?php wp_reset_postdata(); ?>
-		<?php endif; ?>
 
 
 
