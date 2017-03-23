@@ -510,3 +510,7 @@ ul.dropdown-menu li a {
 	background: none!Important;
 	color: white!Important;
 }
+
+.dropdown-menu>.active>a{
+	background: none!important;
+}
