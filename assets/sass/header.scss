@@ -401,6 +401,13 @@
 
 }
 
+ul.dropdown-menu li {
+    padding: 0px!Important;
+    margin-top: 15px;
+}
+ul.dropdown-menu li a {
+    padding: 0px;
+}
 @media all and (min-width: 992px){
 	.header-secondary .toggleNav{
 		display: none;
@@ -422,12 +429,24 @@
 	.header-primary #menu-left-menu{
 		margin-left: 0px;
 	}
-
+	.mainHeader {
+    	padding-top: 5px;
+	}
 	.left-menu.hoveraf.col-md-5.col-sm-7.col-xs-5 {
 			padding: 0px;
 	}
 	.toggleNav{
 		margin-top: -11px;
+	}
+	ul.dropdown-menu li {
+	    padding: 0px!Important;
+	    margin-top: 22px;
+	}
+	ul.dropdown-menu li a {
+	    padding: 0px;
+	}
+	.mainHeader .leftSection{
+		padding-right: 15px;
 	}
 /*	.header-background {
 		background:none;
