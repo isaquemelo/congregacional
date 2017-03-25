@@ -403,39 +403,59 @@ get_header();
 
 
 
-
-		<?php 	$agenda_args = array(
-					'post_type' => 'agenda_type',
-					'posts_per_page' => 5,
-					'meta_key'	=> 'data',
-					'orderby'	=> 'meta_value_num',
-					'order'		=> 'ASC'
+		<?php
 
 
-				);
+			// $agenda_args = array(
+			// 		'post_type' => 'agenda_type',
+			// 		'posts_per_page' => 5,
+			// 		'meta_key'	=> 'data',
+			// 		'orderby'	=> 'meta_value_num',
+			// 		'order'		=> 'ASC'
+
+
+			// 	);
+
+			 // $today = getdate();
+			 // $agenda_args = array(
+				// 'post_type' => 'agenda_type',
+		  //       'posts_per_page' => '5',
+		  //       'date_query'  => array(
+			 //        array(
+			 //            'year'      => $today["year"],
+			 //            'month'     => $today["mon"],
+			 //            'day'       => $today["mday"],
+			 //            'compare'   => '<=',
+			 //        ),
+			 //    ),
+
+		  //       'orderby' => 'data',
+		  //       'order' => 'ASC'
+				// );
+
+
+
+
+
+
+
+			 $agenda_args = array(
+			 			  'post_type' => 'agenda_type',
+			              'showposts' => 5,
+			              'meta_key'=>'data',
+			              'orderby' => 'meta_value_num',
+			              'order' => ASC);
+
+
 
 			$query_agenda = new WP_Query($agenda_args);
 		?>
 
 
-		<?php if ( $query_agenda -> have_posts() ) : ?>
+		<?php if ( $query_agenda -> have_posts() ) :?>
 
 
 			<section class="typeAgenda agenda_type" style="
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 							<?php if (has_post_thumbnail()): ?>
@@ -476,53 +496,69 @@ get_header();
 
 
 
-								<?php while( $query_agenda -> have_posts() ):
+								<?php while( $query_agenda -> have_posts()):
 										$query_agenda -> the_post(); ?>
 
+										<?php
+
+											$current_date = date('j M Y');
+			 								$current_date = strtotime( $current_date );
+											$post_date = get_field('data', false, false) ;
+   											$post_date = strtotime( $post_date );
+
+
+   										?>
+
+
+										<?php if( $post_date >= $current_date ) : ?>
 
 
 
-										<div class="item col-md-8">
-											<div class="leftSch col-md-3">
+											<div class="item col-md-8">
+												<div class="leftSch col-md-3">
 
-												<?php
+													<?php
 
-														$date = get_field('data', false, false);;
-														$date = new DateTime($date);
+															$date = get_field('data', false, false);;
+															$date = new DateTime($date);
 
 
-													?>
+														?>
 
-												<div class="theDateSh">
-													<?php echo $date->format('j M Y'); ?>
-													<?php echo date_i18n( 'D', $date->getTimeStamp() ); ?>
+
+													<div class="theDateSh">
+
+														<?php echo $date->format('j M Y'); ?>
+														<?php //echo date_i18n( 'D', $date->getTimeStamp() ); ?>
+
+													</div>
+
+
+													<div class="theDayTime">
+														<?php $time = get_field('horario');?>
+														<?php $diasem = date_i18n( 'D', $date->getTimeStamp() ); ?>
+														<?php echo $diasem, ' ' ,$time, 'H'; ?>
+													</div>
+
+
+
 
 												</div>
-												<div class="theDayTime">
-													<?php $time = get_field('horario');?>
-													<?php $diasem = date_i18n( 'D', $date->getTimeStamp() ); ?>
-													<?php echo $diasem, ' ' ,$time, 'H'; ?>
+
+												<div class="rightSch col-md-6">
+													<section class="boxesTitle">
+														<?php the_title() ?>
+													</section>
+													<div class="blackLine"></div>
+													<span class="boxesContent col-md-11">
+														<?php the_excerpt();?>
+													</span>
 												</div>
-
-
-
 
 											</div>
 
-											<div class="rightSch col-md-6">
-												<section class="boxesTitle">
-													<?php the_title() ?>
-												</section>
-												<div class="blackLine"></div>
-												<span class="boxesContent col-md-11">
-													<?php the_excerpt();?>
-												</span>
-											</div>
 
-										</div>
-
-
-
+										<?php endif; ?>
 
 
 
