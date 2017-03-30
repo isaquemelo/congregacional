@@ -1,11 +1,6 @@
 # Congregacional Theme #
-
-
-
-
-
 * [Real Demo](http://congregacional.org.br/)
-* [GitHub](https://github.com/isaquemelo)
+* [GitHub Author](https://github.com/isaquemelo)
 
 
 ## Installation ##
