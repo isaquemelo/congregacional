@@ -330,9 +330,9 @@ get_header();
 						<?php while( $query_pessoas -> have_posts() ):
 								$query_pessoas -> the_post(); ?>
 
-							<div class="mixitupclass">
+							<div class="mixitupclass col-md-3">
 
-								<div class="mix col-md-3 <?php the_field('cargo'); ?>">
+								<div class="mix  <?php the_field('cargo'); ?>">
 									<div class="flexMobile">
 										<div class="personImage">
 											<?php the_post_thumbnail(); ?>
