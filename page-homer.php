@@ -121,21 +121,7 @@
 				$query_pessoas = new WP_Query($pessoas_args);
 			?>
 			<?php if ( $query_pessoas -> have_posts() ) : ?>
-				<section class="typePessoas pessoas_type <?php if(get_field('ocupar_toda_tela')){ echo 'fullSize ';} ?>" style="
-
-								<?php if (has_post_thumbnail()): ?>
-
-									background: url('<?php  the_post_thumbnail_url(); ?>')
-
-								<?php endif; ?>
-
-								<?php if (get_field('cor_de_fundo')){
-										echo ';background-color:';
-										the_field('cor_de_fundo');
-									}
-								?>
-
-								" id="4">
+				<section class="typePessoas pessoas_type <?php if(get_field('ocupar_toda_tela')){ echo 'fullSize ';} ?>" style="<?php if (has_post_thumbnail()): ?>background: url('<?php  the_post_thumbnail_url(); ?>')<?php endif; ?><?php if (get_field('cor_de_fundo')){echo ';background-color:';the_field('cor_de_fundo');}?>" id="4">
 						<div class="container infoHD">
 								<header class="infoHeader">
 										<div class="peopleTitle">
