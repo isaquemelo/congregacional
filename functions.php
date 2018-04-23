@@ -409,7 +409,7 @@ require_once get_template_directory() . '/inc/kirki-fields.php';
 /**
  * Load Advanced Custom Fields
  */
-// require_once get_template_directory() . '/inc/acfp/acf.php';
+require_once get_template_directory() . '/inc/acfp/acf.php';
 require_once get_template_directory() . '/inc/fields.php';
 
 
