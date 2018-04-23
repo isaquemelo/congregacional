@@ -11,9 +11,7 @@
 
 get_header();
 ?>
-
 	<div class="generalContent">
-
 		<?php 	$slider_args = array(
 					'post_type' => 'slider_type',
 					'posts_per_page' => '1'
@@ -21,24 +19,16 @@ get_header();
 
 			$query_slider = new WP_Query($slider_args);
 		?>
-
-
 		<?php if ( $query_slider -> have_posts() ) : ?>
 			<?php while( $query_slider -> have_posts() ):
 					$query_slider -> the_post(); ?>
-
-
 				<div class="holdSlide fullSize">
-
 					<section class="typeSlider <?php echo get_post_type();?> <?php if(get_field('ocupar_toda_tela')){ echo 'fullSize ';} ?>" style="
-
 								<?php if (has_post_thumbnail()): ?>
 
 									background: url('<?php  the_post_thumbnail_url(); ?>')
 
-
 								<?php endif; ?>
-
 								<?php if (get_field('cor_de_fundo')){
 										echo ';background-color:';
 										the_field('cor_de_fundo');
@@ -46,17 +36,11 @@ get_header();
 								?>
 
 								" id="1">
-
-
-
 					</section>
-
 					<div class="centered">
 						<div class="container">
 							<div class="row">
-
 								<div class="centerContent">
-
 									<span class="titleSlider col-md-8 col-xs-11">
 										<?php the_title( ); ?>
 									</span>
@@ -68,14 +52,11 @@ get_header();
 															conheça
 										</a>
 									<?php endif; ?>
-
 								</div>
-
 							</div>
 						</div>
 					</div>
 				</div>
-
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 		<?php endif; ?>
