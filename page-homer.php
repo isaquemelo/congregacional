@@ -225,7 +225,7 @@
 						</div>
 						<div class="container possHold">
 								<div class="row">
-									<?php while( $query_agenda -> have_posts()):
+								<?php while( $query_agenda -> have_posts()):
 											$query_agenda -> the_post(); ?>
 
 											<?php
@@ -321,3 +321,4 @@
 		</div>
 	<?php
 	get_footer();
+
